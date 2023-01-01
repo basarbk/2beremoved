@@ -39,6 +39,7 @@ beforeAll(async () => {
         callback();
       });
     },
+    logger: true,
   });
   server.on("error", err => {
     console.log("Error %s", err.message);
@@ -49,6 +50,7 @@ beforeAll(async () => {
   await new Promise((resolve) =>
     server.listen(11587, 'localhost', (...params) => {
       console.log('server initialized', params)
+      console.log(server);
       resolve();
     })
   );
