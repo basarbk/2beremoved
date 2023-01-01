@@ -37,14 +37,13 @@ beforeAll(async () => {
     },
   });
 
-  await server.listen(8587, 'localhost');
-
   await sequelize.sync();
 
   await new Promise((resolve) =>
-    setTimeout(() => {
+    server.listen(8587, 'localhost', (params) => {
+      console.log('server initialized', params)
       resolve();
-    }, 1000)
+    })
   );
 
   jest.setTimeout(30000);
