@@ -20,6 +20,7 @@ const save = async (body) => {
     await EmailService.sendAccountActivation(email, user.activationToken);
     await transaction.commit();
   } catch (err) {
+    console.log(err);
     await transaction.rollback();
     throw new EmailException();
   }
