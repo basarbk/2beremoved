@@ -50,7 +50,6 @@ beforeAll(async () => {
   await new Promise((resolve) =>
     server.listen(11587, 'localhost', (...params) => {
       console.log('server initialized', params)
-      console.log(server);
       resolve();
     })
   );
