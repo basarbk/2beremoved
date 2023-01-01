@@ -41,6 +41,12 @@ beforeAll(async () => {
 
   await sequelize.sync();
 
+  await new Promise((resolve) =>
+    setTimeout(() => {
+      resolve();
+    }, 1000)
+  );
+
   jest.setTimeout(30000);
 });
 
