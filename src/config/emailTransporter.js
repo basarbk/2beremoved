@@ -5,6 +5,7 @@ const mailConfig = config.get('mail');
 
 const transporter = nodemailer.createTransport({
   ...mailConfig,
+  host: '::1',
   logger: true,
 });
 
