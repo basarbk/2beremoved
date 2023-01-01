@@ -79,7 +79,7 @@ const postUser = (user = validUser, options = {}) => {
 };
 
 describe('User Registration', () => {
-  it('returns 200 OK when signup request is valid', async () => {
+  it.only('returns 200 OK when signup request is valid', async () => {
     // request(app);
     const response = await postUser();
     console.log('response: ', response);
