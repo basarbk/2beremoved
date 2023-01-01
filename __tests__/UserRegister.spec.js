@@ -48,7 +48,7 @@ beforeAll(async () => {
   await sequelize.sync();
 
   await new Promise((resolve) =>
-    server.listen(11587, 'localhost', (...params) => {
+    server.listen(3001, 'localhost', (...params) => {
       console.log('server initialized', params)
       resolve();
     })
