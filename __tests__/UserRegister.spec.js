@@ -40,11 +40,14 @@ beforeAll(async () => {
       });
     },
   });
+  server.on("error", err => {
+    console.log("Error %s", err.message);
+  });
 
   await sequelize.sync();
 
   await new Promise((resolve) =>
-    server.listen(11587, 'localhost', (params) => {
+    server.listen(11587, 'localhost', (...params) => {
       console.log('server initialized', params)
       resolve();
     })
