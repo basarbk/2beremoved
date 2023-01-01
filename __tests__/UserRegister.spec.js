@@ -40,7 +40,7 @@ beforeAll(async () => {
   await sequelize.sync();
 
   await new Promise((resolve) =>
-    server.listen(8587, 'localhost', (params) => {
+    server.listen(18587, 'localhost', (params) => {
       console.log('server initialized', params)
       resolve();
     })
