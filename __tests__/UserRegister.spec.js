@@ -39,7 +39,7 @@ beforeAll(async () => {
         callback();
       });
     },
-    logger: true,
+    // logger: true,
   });
   server.on("error", err => {
     console.log("Error %s", err.message);
