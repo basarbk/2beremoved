@@ -19,14 +19,18 @@ beforeAll(async () => {
     authOptional: true,
 
     onData(stream, session, callback) {
+      console.log('111')
       let mailBody;
 
       stream.on('data', (data) => {
+        console.log('222')
         mailBody += data.toString();
       });
 
       stream.on('end', () => {
+        console.log('333')
         if (simulateSmtpFailure) {
+          console.log('444')
           const err = new Error('Invalid mailbox');
           err.responseCode = 553;
           return callback(err);
